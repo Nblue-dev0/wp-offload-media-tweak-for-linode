@@ -102,48 +102,6 @@ class Amazon_S3_and_CloudFront_Tweaks {
 		add_filter( 'as3cf_aws_s3_domain', array( $this, 'linode_domain' ) );
 		add_filter( 'as3cf_aws_s3_console_url', array( $this, 'linode_s3_console_url' ) );	
 
-		public function linode_s3_client_args( $args ) {
-			$args['endpoint']                = 'https://us-iad-1.linodeobjects.com';
-			$args['region']                  = 'eu-central-1';
-			$args['use_path_style_endpoint'] = true;
-	
-			return $args;
-		}
-
-		public function linode_get_regions( $regions ) {
-			$regions = array(
-				'nl-ams-1' => 'Linode Amsterdam (Netherlands)',
-				'us-southeast-1' => 'Linode Atlanta, GA (USA)',
-				'in-maa-1' => 'Linode Chennai (India)',
-				'us-ord-1' => 'Linode Chicago, IL (USA)',
-				'eu-central-1'   => 'Linode Frankfurt (Germany)',
-				'id-cgk-1'   => 'Linode Jakarta (Indonesia)',
-				'us-lax-1'   => 'Linode Los Angeles, CA (USA)',
-				'us-mia-1'      => 'Linode Miami, FL (USA)',
-				'it-mil-1'      => 'Linode Milan (Italy)',
-				'us-east-1'      => 'Linode Newark, NJ (USA)',
-				'jp-osa-1'   => 'Linode Osaka (Japan)',
-				'fr-par-1'      => 'Linode Paris (France)',
-				'br-gru-1'      => 'Linode São Paulo (Brazil)',
-				'us-sea-1'      => 'Linode Seattle, WA (USA)',
-				'ap-south-1'      => 'Linode Singapore',
-				'se-sto-1'      => 'Linode Stockholm (Sweden)',
-				'us-iad-1'      => 'Linode Washington, DC (USA)',
-			);
-	
-			return $regions;
-		}
-
-		public function linode_domain( $domain ) {
-			return 'linodeobjects.com';
-		}
-
-		public function linode_s3_console_url( $url ) {
-			return 'https://us-iad-1.linodeobjects.com';
-		}
-		//return 'https://api.linode.com';
-		//return 'https://api.linode.com/v4/object-storage/buckets/us-iad-1/';
-
 		/*
 		 * Storage related filters.
 		 */
@@ -532,6 +490,47 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	/*
 	 * <<< Wasabi Examples End
 	 */
+
+	 public function linode_s3_client_args( $args ) {
+		$args['endpoint']                = 'https://us-iad-1.linodeobjects.com';
+		$args['region']                  = 'eu-central-1';
+		$args['use_path_style_endpoint'] = true;
+		return $args;
+	}
+
+	public function linode_get_regions( $regions ) {
+		$regions = array(
+			'nl-ams-1' => 'Linode Amsterdam (Netherlands)',
+			'us-southeast-1' => 'Linode Atlanta, GA (USA)',
+			'in-maa-1' => 'Linode Chennai (India)',
+			'us-ord-1' => 'Linode Chicago, IL (USA)',
+			'eu-central-1'   => 'Linode Frankfurt (Germany)',
+			'id-cgk-1'   => 'Linode Jakarta (Indonesia)',
+			'us-lax-1'   => 'Linode Los Angeles, CA (USA)',
+			'us-mia-1'      => 'Linode Miami, FL (USA)',
+			'it-mil-1'      => 'Linode Milan (Italy)',
+			'us-east-1'      => 'Linode Newark, NJ (USA)',
+			'jp-osa-1'   => 'Linode Osaka (Japan)',
+			'fr-par-1'      => 'Linode Paris (France)',
+			'br-gru-1'      => 'Linode São Paulo (Brazil)',
+			'us-sea-1'      => 'Linode Seattle, WA (USA)',
+			'ap-south-1'      => 'Linode Singapore',
+			'se-sto-1'      => 'Linode Stockholm (Sweden)',
+			'us-iad-1'      => 'Linode Washington, DC (USA)',
+		);
+
+		return $regions;
+	}
+
+	public function linode_domain( $domain ) {
+		return 'linodeobjects.com';
+	}
+
+	public function linode_s3_console_url( $url ) {
+		return 'https://us-iad-1.linodeobjects.com';
+	}
+	//return 'https://api.linode.com';
+	//return 'https://api.linode.com/v4/object-storage/buckets/us-iad-1/';
 
 	/*
 	 * Storage related filters.
