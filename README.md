@@ -1,6 +1,6 @@
 # Changes for Linode
 
-I've made some changes in order to make WP Offload be able to work with Linode. Currently, the lines related to Linode are uncommented, don't forget to put your cluster ID (region) to necessary functions.
+I've made some changes in order to make WP Offload Media plugin able to work with Linode. Currently, the lines related to Linode are uncommented, don't forget to put your cluster ID (region) to the necessary functions.
 
 # WP Offload Media Tweaks
 
