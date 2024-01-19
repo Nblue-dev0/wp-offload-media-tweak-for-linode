@@ -142,7 +142,8 @@ class Amazon_S3_and_CloudFront_Tweaks {
 			return 'https://us-iad-1.linodeobjects.com';
 		}
 		//return 'https://api.linode.com';
-
+		//return 'https://api.linode.com/v4/object-storage/buckets/us-iad-1/';
+			
 		/*
 		 * Storage related filters.
 		 */
