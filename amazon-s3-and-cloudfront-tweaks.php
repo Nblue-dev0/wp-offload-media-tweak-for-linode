@@ -496,12 +496,12 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 */
 
 	 /*
-	  * Use the region for your bucket in endpoint and region 
+	  * Use the region of your bucket in endpoint and region 
 	  * Also insert your region to the linode_s3_console_url function
 	  */
 	 public function linode_s3_client_args( $args ) {
 		$args['endpoint']                = 'https://us-iad-1.linodeobjects.com';
-		$args['region']                  = 'eu-central-1';
+		$args['region']                  = 'us-iad-1';
 		$args['use_path_style_endpoint'] = true;
 		return $args;
 	}
@@ -512,10 +512,10 @@ class Amazon_S3_and_CloudFront_Tweaks {
 	 */
 	public function linode_get_regions( $regions ) {
 		$regions = array(
-			'nl-ams-1'			=> 'Linode Amsterdam (Netherlands)',
+			'nl-ams-1'		=> 'Linode Amsterdam (Netherlands)',
 			'us-southeast-1'	=> 'Linode Atlanta, GA (USA)',
-			'in-maa-1' 			=> 'Linode Chennai (India)',
-			'us-ord-1' 			=> 'Linode Chicago, IL (USA)',
+			'in-maa-1' 		=> 'Linode Chennai (India)',
+			'us-ord-1' 		=> 'Linode Chicago, IL (USA)',
 			'eu-central-1'   	=> 'Linode Frankfurt (Germany)',
 			'id-cgk-1'   		=> 'Linode Jakarta (Indonesia)',
 			'us-lax-1'   		=> 'Linode Los Angeles, CA (USA)',
