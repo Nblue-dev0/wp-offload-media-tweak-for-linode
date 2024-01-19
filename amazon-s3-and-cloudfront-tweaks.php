@@ -100,7 +100,7 @@ class Amazon_S3_and_CloudFront_Tweaks {
 		add_filter( 'as3cf_aws_get_regions', array( $this, 'linode_get_regions' ) );
 		add_filter( 'as3cf_aws_s3_bucket_in_path', '__return_true' );
 		add_filter( 'as3cf_aws_s3_domain', array( $this, 'linode_domain' ) );
-		add_filter( 'as3cf_aws_s3_console_url', array( $this, 'linode_s3_console_url' ) )	
+		add_filter( 'as3cf_aws_s3_console_url', array( $this, 'linode_s3_console_url' ) );	
 
 		public function linode_s3_client_args( $args ) {
 			$args['endpoint']                = 'https://us-iad-1.linodeobjects.com';
@@ -143,7 +143,7 @@ class Amazon_S3_and_CloudFront_Tweaks {
 		}
 		//return 'https://api.linode.com';
 		//return 'https://api.linode.com/v4/object-storage/buckets/us-iad-1/';
-			
+
 		/*
 		 * Storage related filters.
 		 */
